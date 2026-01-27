@@ -13,11 +13,11 @@
 ## 安装
 
 ```bash
-npm install vite-plugin-monaco-editor monaco-editor
+npm install @binran/vite-plugin-monaco-editor monaco-editor
 # 或
-yarn add vite-plugin-monaco-editor monaco-editor
+yarn add @binran/vite-plugin-monaco-editor monaco-editor
 # 或
-pnpm add vite-plugin-monaco-editor monaco-editor
+pnpm add @binran/vite-plugin-monaco-editor monaco-editor
 ```
 
 ## 使用方法

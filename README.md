@@ -15,11 +15,11 @@ A Vite plugin that simplifies the integration of Monaco Editor with automatic wo
 ## Installation
 
 ```bash
-npm install vite-plugin-monaco-editor monaco-editor
+npm install @binran/vite-plugin-monaco-editor monaco-editor
 # or
-yarn add vite-plugin-monaco-editor monaco-editor
+yarn add @binran/vite-plugin-monaco-editor monaco-editor
 # or
-pnpm add vite-plugin-monaco-editor monaco-editor
+pnpm add @binran/vite-plugin-monaco-editor monaco-editor
 ```
 
 ## Usage

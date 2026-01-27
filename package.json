@@ -1,9 +1,14 @@
 {
-  "name": "vite-plugin-monaco-editor",
+  "name": "@binran/vite-plugin-monaco-editor",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A Vite plugin that simplifies the integration of Monaco Editor with automatic worker handling and language support",
   "author": "bin-ran",
+  "homepage": "https://github.com/bin-ran/vite-plugin-monaco-editor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bin-ran/vite-plugin-monaco-editor.git"
+  },
   "keywords": [
     "vite",
     "plugin",
@@ -14,7 +19,7 @@
     "javascript",
     "web-worker"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
@@ -23,7 +28,10 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "README.md",
+    "README_zh-CN.md"
   ],
   "scripts": {
     "build": "tsdown",
@@ -37,8 +45,8 @@
     "example:preview": "vite preview --config example/vite.config.ts"
   },
   "devDependencies": {
-    "@types/node": "^25.0.10",
     "@eslint/js": "^9.39.2",
+    "@types/node": "^25.0.10",
     "@vitejs/plugin-vue": "^6.0.3",
     "eslint": "^9.39.2",
     "tsdown": "^0.20.1",
@@ -52,5 +60,8 @@
   "peerDependencies": {
     "monaco-editor": "^0.55.1",
     "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "bumpp": "^10.4.0"
   }
 }
