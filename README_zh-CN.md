@@ -13,11 +13,11 @@
 ## 安装
 
 ```bash
-npm install @binran/vite-plugin-monaco-editor monaco-editor
+npm install -D @binran/vite-plugin-monaco-editor
 # 或
-yarn add @binran/vite-plugin-monaco-editor monaco-editor
+yarn add -D @binran/vite-plugin-monaco-editor
 # 或
-pnpm add @binran/vite-plugin-monaco-editor monaco-editor
+pnpm add -D @binran/vite-plugin-monaco-editor
 ```
 
 ## 使用方法
@@ -28,11 +28,11 @@ pnpm add @binran/vite-plugin-monaco-editor monaco-editor
 
 ```js
 import { defineConfig } from 'vite'
-import monacoEditorPlugin from 'vite-plugin-monaco-editor'
+import monacoEditorWorkerPlugin from 'vite-plugin-monaco-editor'
 
 export default defineConfig({
   plugins: [
-    monacoEditorPlugin()
+    monacoEditorWorkerPlugin()
   ]
 })
 ```
@@ -41,11 +41,11 @@ export default defineConfig({
 
 ```js
 import { defineConfig } from 'vite'
-import monacoEditorPlugin from 'vite-plugin-monaco-editor'
+import monacoEditorWorkerPlugin from 'vite-plugin-monaco-editor'
 
 export default defineConfig({
   plugins: [
-    monacoEditorPlugin({
+    monacoEditorWorkerPlugin({
       entry: 'src/main.ts',  // 注入代码的目标入口文件，默认: 'src/main.ts'
       languages: ['json', 'css', 'html', 'typescript'],  // 支持的语言
       debug: false  // 启用调试日志，默认: false

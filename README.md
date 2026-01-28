@@ -15,11 +15,11 @@ A Vite plugin that simplifies the integration of Monaco Editor with automatic wo
 ## Installation
 
 ```bash
-npm install @binran/vite-plugin-monaco-editor monaco-editor
+npm install -D @binran/vite-plugin-monaco-editor
 # or
-yarn add @binran/vite-plugin-monaco-editor monaco-editor
+yarn add -D @binran/vite-plugin-monaco-editor
 # or
-pnpm add @binran/vite-plugin-monaco-editor monaco-editor
+pnpm add -D @binran/vite-plugin-monaco-editor
 ```
 
 ## Usage
@@ -30,11 +30,11 @@ Add the plugin to your `vite.config.js` or `vite.config.ts`:
 
 ```js
 import { defineConfig } from 'vite'
-import monacoEditorPlugin from 'vite-plugin-monaco-editor'
+import monacoEditorWorkerPlugin from 'vite-plugin-monaco-editor'
 
 export default defineConfig({
   plugins: [
-    monacoEditorPlugin()
+    monacoEditorWorkerPlugin()
   ]
 })
 ```
@@ -43,11 +43,11 @@ export default defineConfig({
 
 ```js
 import { defineConfig } from 'vite'
-import monacoEditorPlugin from 'vite-plugin-monaco-editor'
+import monacoEditorWorkerPlugin from 'vite-plugin-monaco-editor'
 
 export default defineConfig({
   plugins: [
-    monacoEditorPlugin({
+    monacoEditorWorkerPlugin({
       entry: 'src/main.ts',  // Entry file to inject code, default: 'src/main.ts'
       languages: ['json', 'css', 'html', 'typescript'],  // Supported languages
       debug: false  // Enable debug logging, default: false

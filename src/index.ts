@@ -23,7 +23,7 @@ const WORKER_MAP: Record<string, string> = {
   javascript: "monaco-editor/esm/vs/language/typescript/ts.worker",
 };
 
-export default function monacoUniversalPlugin(
+export default function monacoEditorWorkerPlugin(
   options: MonacoPluginOptions = {}
 ): Plugin {
   const {
@@ -67,18 +67,18 @@ export default function monacoUniversalPlugin(
     });
 
     return `
-/* --- Monaco Universal Plugin Start --- */
+/* --- Monaco Editor Plugin Start --- */
 ${imports}
 self.MonacoEnvironment = {
   getWorker(_, label) {
     ${getWorkerConditions}return new EditorWorker();
   }
 };
-/* --- Monaco Universal Plugin End --- */\n`;
+/* --- Monaco Editor Plugin End --- */\n`;
   };
 
   return {
-    name: "vite-plugin-monaco-universal",
+    name: "vite-plugin-monaco-editor",
     enforce: "pre",
 
     // 2. Automatically handle dependency pre-building to prevent flickering and errors in development environment
@@ -101,7 +101,7 @@ self.MonacoEnvironment = {
       const normalizedId = path.normalize(id);
 
       if (normalizedId.endsWith(normalizedEntry)) {
-        if (debug) console.log(`[monaco-universal] Injecting into ${id}`);
+        if (debug) console.log(`[monaco-editor] Injecting into ${id}`);
         return {
           code: getInjectionCode() + code,
           map: null,

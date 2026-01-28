@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import monacoUniversalPlugin from "../dist/index";
+import monacoEditorWorkerPlugin from "../src/index";
 
 export default defineConfig(() => {
   return {
-    root: "./",
+    root: "example",
     plugins: [
       vue(),
-      monacoUniversalPlugin({
+      monacoEditorWorkerPlugin({
         languages: ["json"],
         debug: false,
       }),
