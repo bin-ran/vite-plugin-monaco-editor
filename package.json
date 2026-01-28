@@ -1,8 +1,8 @@
 {
   "name": "@binran/vite-plugin-monaco-editor",
-  "type": "module",
-  "version": "0.0.5",
   "description": "A Vite plugin that simplifies the integration of Monaco Editor with automatic worker handling and language support",
+  "version": "0.0.5",
+  "type": "module",
   "author": "bin-ran",
   "homepage": "https://github.com/bin-ran/vite-plugin-monaco-editor",
   "repository": {
@@ -24,8 +24,6 @@
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
     "dist",
@@ -48,7 +46,9 @@
     "@eslint/js": "^9.39.2",
     "@types/node": "^25.0.10",
     "@vitejs/plugin-vue": "^6.0.3",
+    "bumpp": "^10.4.0",
     "eslint": "^9.39.2",
+    "publint": "^0.3.17",
     "tsdown": "^0.20.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
@@ -60,8 +60,5 @@
   "peerDependencies": {
     "monaco-editor": "^0.55.1",
     "vite": "^7.3.1"
-  },
-  "dependencies": {
-    "bumpp": "^10.4.0"
   }
 }
