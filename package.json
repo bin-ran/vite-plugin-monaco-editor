@@ -1,7 +1,7 @@
 {
   "name": "@binran/vite-plugin-monaco-editor",
   "description": "A Vite plugin that simplifies the integration of Monaco Editor with automatic worker handling and language support",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "author": "bin-ran",
   "homepage": "https://github.com/bin-ran/vite-plugin-monaco-editor",
