@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import monacoEditorWorkerPlugin from "../src/index";
+import monacoEditorWorkerPlugin from "../src/index.ts";
 
 export default defineConfig(() => {
   return {

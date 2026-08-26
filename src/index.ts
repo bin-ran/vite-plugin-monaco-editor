@@ -10,17 +10,19 @@ interface MonacoPluginOptions {
   debug?: boolean;
 }
 
-// Mapping table of languages to Worker paths
+// Mapping table of languages to Worker paths.
+// Note: since monaco-editor 0.56, the exports map is "./*" -> "./esm/vs/*.js",
+// so deep paths must drop the legacy "esm/vs/" prefix.
 const WORKER_MAP: Record<string, string> = {
-  json: "monaco-editor/esm/vs/language/json/json.worker",
-  css: "monaco-editor/esm/vs/language/css/css.worker",
-  scss: "monaco-editor/esm/vs/language/css/css.worker",
-  less: "monaco-editor/esm/vs/language/css/css.worker",
-  html: "monaco-editor/esm/vs/language/html/html.worker",
-  handlebars: "monaco-editor/esm/vs/language/html/html.worker",
-  razor: "monaco-editor/esm/vs/language/html/html.worker",
-  typescript: "monaco-editor/esm/vs/language/typescript/ts.worker",
-  javascript: "monaco-editor/esm/vs/language/typescript/ts.worker",
+  json: "monaco-editor/language/json/json.worker",
+  css: "monaco-editor/language/css/css.worker",
+  scss: "monaco-editor/language/css/css.worker",
+  less: "monaco-editor/language/css/css.worker",
+  html: "monaco-editor/language/html/html.worker",
+  handlebars: "monaco-editor/language/html/html.worker",
+  razor: "monaco-editor/language/html/html.worker",
+  typescript: "monaco-editor/language/typescript/ts.worker",
+  javascript: "monaco-editor/language/typescript/ts.worker",
 };
 
 export default function monacoEditorWorkerPlugin(
@@ -35,7 +37,7 @@ export default function monacoEditorWorkerPlugin(
   // 1. Generate Worker import list based on configuration
   const getInjectionCode = () => {
     // Basic Editor Worker is required
-    let imports = `import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';\n`;
+    let imports = `import EditorWorker from 'monaco-editor/editor/editor.worker?worker';\n`;
     let getWorkerConditions = "";
 
     // Dynamically generate on-demand loading logic
@@ -84,8 +86,8 @@ self.MonacoEnvironment = {
     // 2. Automatically handle dependency pre-building to prevent flickering and errors in development environment
     config() {
       const include = [
-        "monaco-editor/esm/vs/editor/editor.api",
-        "monaco-editor/esm/vs/editor/editor.worker",
+        "monaco-editor/editor/editor.api",
+        "monaco-editor/editor/editor.worker",
       ];
       languages.forEach((lang) => {
         if (WORKER_MAP[lang]) include.push(WORKER_MAP[lang]);

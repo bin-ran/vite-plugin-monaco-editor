@@ -3,9 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import "monaco-editor/esm/nls.messages.zh-cn.js";
+import "monaco-editor/nls/lang/zh-cn.js";
 import * as monaco from "monaco-editor";
-import "monaco-editor/esm/vs/language/json/monaco.contribution.js";
+import "monaco-editor/language/json/monaco.contribution.js";
 import { onMounted, useTemplateRef } from "vue";
 
 const editorEl = useTemplateRef("editorEl");
